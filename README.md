@@ -2,7 +2,6 @@
 
 **Author**: BBL  
 **Version**: 2  
-**License**: MIT  
 **Status**: Stable  
 **Platform**: MIT App Inventor, Kodular, Niotron, etc.
 
@@ -111,24 +110,12 @@ These are bundled within the AIX, so no manual setup is required:
 
 - MIT App Inventor (ai2.appinventor.mit.edu)
 - Kodular (creator.kodular.io)
-- Niotron
 - Android 5.0 and above
 
 ---
 
-## 📝 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🤝 Contributions
-
-Feature suggestions and pull requests are welcome. If you'd like to contribute features such as avatars, timestamps, or input box integration — feel free to fork this repo and submit your ideas.
-
----
 
 ## 📬 Contact
 
 Have questions or want to showcase your project using ChatView?  
-Post in the [Kodular Community](https://community.kodular.io) or open an issue here on GitHub.
+Post in the [MIT App Inventor Community](https://community.kodular.io) or open an issue here on GitHub.
