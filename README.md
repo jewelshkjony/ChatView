@@ -84,7 +84,7 @@ ChatView1.AddMessage("Hello!", false)
 
 ## 📦 Installation
 
-1. Download the latest release from the [Releases](#) tab.
+1. Download the latest release from the [Releases](https://github.com/Amanpro83/ChatView/releases) tab.
 2. Import the `.aix` file into your App Inventor/Kodular project.
 3. Drag the extension into the designer.
 4. Use `CreateChatView` inside a layout and start adding messages.
