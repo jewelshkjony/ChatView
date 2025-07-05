@@ -118,4 +118,4 @@ These are bundled within the AIX, so no manual setup is required:
 ## 📬 Contact
 
 Have questions or want to showcase your project using ChatView?  
-Post in the [MIT App Inventor Community](https://community.kodular.io) or open an issue here on GitHub.
+Post in the [MIT App Inventor Community]([https://community.kodular.io](https://community.appinventor.mit.edu/t/free-chatview-open-source-and-made-with-recyclerview-library/151379)) or open an issue here on GitHub.
