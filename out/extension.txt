@@ -1,0 +1,84 @@
+<div align="center">
+<h1><kbd>🧩 ChatView</kbd></h1>
+An extension for MIT App Inventor 2.<br>
+ChatView list using recyclerview.
+</div>
+
+## 📝 Specifications
+* **
+📦 **Package:** io.bbl.chatview
+💾 **Size:** 214.38 KB
+⚙️ **Version:** 1
+📱 **Minimum API Level:** 14
+📅 **Updated On:** [date=2025-07-06 timezone="Asia/Dhaka"]
+💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-publish-extensions/129103?u=jewel) <small><mark>v3.7.2-premium</mark></small>
+
+## <kbd>Methods:</kbd>
+**ChatView** has total 3 methods.
+
+### 1. CreateChatView
+Creates the chat view inside the given arrangement.
+
+| Parameter | Type
+| - | - |
+| arrangement | component
+
+### 2. AddMessage
+Adds a message to the chat. If isSender is true, message is right-aligned.
+
+| Parameter | Type
+| - | - |
+| message | text
+| isSender | boolean
+
+### 3. ClearMessages
+Clears all chat messages.
+
+## <kbd>Setters:</kbd>
+**ChatView** has total 9 setter properties.
+
+### 1. BubbleColorSender
+Set sender bubble color.
+
+* Input type: `number`
+
+### 2. BubbleColorReceiver
+Set receiver bubble color.
+
+* Input type: `number`
+
+### 3. TextColor
+Set text color.
+
+* Input type: `number`
+
+### 4. TextSize
+Set text size.
+
+* Input type: `number`
+
+### 5. BubblePadding
+Set bubble padding.
+
+* Input type: `number`
+
+### 6. MaxBubbleWidth
+Set max bubble width.
+
+* Input type: `number`
+
+### 7. BubbleCornerRadius
+Set bubble corner radius.
+
+* Input type: `number`
+
+### 8. FontBold
+Set whether text is bold.
+
+* Input type: `boolean`
+
+### 9. FontItalic
+Set whether text is italic.
+
+* Input type: `boolean`
+

@@ -1,28 +1,36 @@
 package io.bbl.chatview;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.graphics.drawable.GradientDrawable;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.appinventor.components.annotations.*;
-import com.google.appinventor.components.runtime.*;
-
 import java.util.ArrayList;
 
-public class ChatView extends AndroidNonvisibleComponent {
+import android.content.Context;
+import android.view.View;
+import android.view.Gravity;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.FrameLayout;
+import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.google.appinventor.components.annotations.DesignerComponent;
+import com.google.appinventor.components.runtime.AndroidNonvisibleComponent;
+import com.google.appinventor.components.runtime.ComponentContainer;
+import com.google.appinventor.components.annotations.SimpleFunction;
+import com.google.appinventor.components.runtime.HVArrangement;
+import com.google.appinventor.components.annotations.SimpleProperty;
+
+@DesignerComponent(
+    version = 1, 
+    versionName = "1", 
+    description = "ChatView list using recyclerview.", 
+    iconName = "icon.png"
+)
+public class ChatView extends AndroidNonvisibleComponent {
+    private final Context context;
     private RecyclerView recyclerView;
     private ChatAdapter adapter;
     private final ArrayList<ChatMessage> messages = new ArrayList<>();
-    private Context context;
 
     // Customizable properties
     private int bubbleColorSender = 0xFF42A5F5;
@@ -41,12 +49,11 @@ public class ChatView extends AndroidNonvisibleComponent {
     }
 
     @SimpleFunction(description = "Creates the chat view inside the given arrangement.")
-    public void CreateChatView(AndroidViewComponent arrangement) {
+    public void CreateChatView(HVArrangement arrangement) {
         recyclerView = new RecyclerView(context);
         recyclerView.setLayoutParams(new RecyclerView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-        ));
+                ViewGroup.LayoutParams.MATCH_PARENT));
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         adapter = new ChatAdapter();
         recyclerView.setAdapter(adapter);
@@ -57,7 +64,8 @@ public class ChatView extends AndroidNonvisibleComponent {
 
     @SimpleFunction(description = "Adds a message to the chat. If isSender is true, message is right-aligned.")
     public void AddMessage(String message, boolean isSender) {
-        if (recyclerView == null) return;
+        if (recyclerView == null)
+            return;
         messages.add(new ChatMessage(message, isSender));
         adapter.notifyItemInserted(messages.size() - 1);
         recyclerView.scrollToPosition(messages.size() - 1);
@@ -136,15 +144,13 @@ public class ChatView extends AndroidNonvisibleComponent {
             FrameLayout container = new FrameLayout(context);
             container.setLayoutParams(new RecyclerView.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-            ));
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
             container.setPadding(12, 8, 12, 8);
 
             TextView messageView = new TextView(context);
             messageView.setLayoutParams(new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-            ));
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
             container.addView(messageView);
 
             return new ChatViewHolder(container, messageView);
@@ -165,9 +171,12 @@ public class ChatView extends AndroidNonvisibleComponent {
             holder.textView.setMaxWidth(maxBubbleWidth);
 
             int style = Typeface.NORMAL;
-            if (fontBold && fontItalic) style = Typeface.BOLD_ITALIC;
-            else if (fontBold) style = Typeface.BOLD;
-            else if (fontItalic) style = Typeface.ITALIC;
+            if (fontBold && fontItalic)
+                style = Typeface.BOLD_ITALIC;
+            else if (fontBold)
+                style = Typeface.BOLD;
+            else if (fontItalic)
+                style = Typeface.ITALIC;
             holder.textView.setTypeface(null, style);
 
             GradientDrawable drawable = new GradientDrawable();
